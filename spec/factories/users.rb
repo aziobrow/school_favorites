@@ -1,7 +1,7 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :user do
-    name "MyString"
-    email "MyString"
-    password "MyString"
+    sequence(:name )  {|n| "User #{n}"}
+    sequence(:email) {|n| "user#{n}@gmail.com"}
+    sequence(:password) {|n| "xyz#{n}"}
   end
 end

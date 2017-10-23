@@ -1,6 +1,6 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :district do
-    name "MyString"
-    board_member "MyString"
+    sequence(:name) {|n| "District #{n}"}
+    sequence(:board_member) {|n| "Board Member #{n}"}
   end
 end

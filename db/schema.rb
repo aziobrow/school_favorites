@@ -10,10 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171022000620) do
+ActiveRecord::Schema.define(version: 20171022215311) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "districts", force: :cascade do |t|
+    t.string "name"
+    t.string "board_member"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "schools", force: :cascade do |t|
+    t.integer "school_number"
+    t.string "name"
+    t.string "address"
+    t.string "zip_code"
+    t.string "phone"
+    t.string "principal"
+    t.string "grade_levels"
+    t.string "web_url"
+    t.string "description"
+    t.bigint "district_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["district_id"], name: "index_schools_on_district_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "name"
@@ -23,4 +46,5 @@ ActiveRecord::Schema.define(version: 20171022000620) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "schools", "districts"
 end

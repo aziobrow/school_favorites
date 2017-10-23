@@ -42,7 +42,7 @@ group :development, :test do
   gem 'pry'
   gem 'database_cleaner'
   gem 'seeing_is_believing'
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
 
 end
 
