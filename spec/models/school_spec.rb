@@ -13,8 +13,8 @@ RSpec.describe School, type: :model do
 
       it "is invalid without a unique school number" do
         district = create(:district)
-        school1 = School.new(school_number: 150, name: "Southmoor Elementary", address: "3755 S Magnolia Way", principal: "Sarina Compoz", description: "Elementary", district: district)
-        school2 = School.new(school_number: 150, name: "Southmoor Elementary", address: "3755 S Magnolia Way", principal: "Sarina Compoz", description: "Elementary", district: district)
+        school1 = School.create(school_number: 150, name: "Southmoor Elementary", address: "3755 S Magnolia Way", principal: "Sarina Compoz", description: "Elementary", district: district)
+        school2 = School.create(school_number: 150, name: "Southmoor Elementary", address: "3755 S Magnolia Way", principal: "Sarina Compoz", description: "Elementary", district: district)
 
         expect(school2).to be_invalid
       end
@@ -23,14 +23,13 @@ RSpec.describe School, type: :model do
         district = create(:district)
         school = School.new(school_number: 150, address: "3755 S Magnolia Way", principal: "Sarina Compoz", description: "Elementary", district: district)
 
-        expect(school1).to be_valid
         expect(school).to be_invalid
       end
 
       it "is invalid without a unique name" do
         district = create(:district)
-        school1 = School.new(school_number: 150, name: "Southmoor Elementary", address: "3755 S Magnolia Way", principal: "Sarina Compoz", description: "Elementary", district: district)
-        school2 = School.new(school_number: 151, name: "Southmoor Elementary", address: "3755 S Magnolia Way", principal: "Sarina Compoz", description: "Elementary", district: district)
+        school1 = School.create(school_number: 150, name: "Southmoor Elementary", address: "3755 S Magnolia Way", principal: "Sarina Compoz", description: "Elementary", district: district)
+        school2 = School.create(school_number: 151, name: "Southmoor Elementary", address: "3755 S Magnolia Way", principal: "Sarina Compoz", description: "Elementary", district: district)
 
         expect(school1).to be_valid
         expect(school2).to be_invalid
