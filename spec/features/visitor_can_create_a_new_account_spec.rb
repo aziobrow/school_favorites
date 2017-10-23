@@ -5,9 +5,10 @@ describe "a visitor can create a new account" do
     visit "/"
     click_on "Sign Up"
 
-    expect(current_path).to eq(login_path)
+    expect(current_path).to eq(new_user_path)
 
     fill_in "user[name]", with: "aziobrow"
+    fill_in "user[email]", with: "aziobrow@gmail.com"
     fill_in "user[password]", with: "1234"
     click_on "Create Account"
 

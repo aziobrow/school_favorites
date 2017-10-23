@@ -67,9 +67,7 @@ RSpec.describe School, type: :model do
 
   describe "relationships" do
     it "belongs to a district" do
-      district = create(:district)
-      school = School.new(school_number: 150, name: "Southmoor Elementary", address: "3755 S Magnolia Way", principal: "Sarina Compoz", description: "Elementary", district: district)
-
+      school = create(:school)
       expect(school).to respond_to(:district)
     end
   end
