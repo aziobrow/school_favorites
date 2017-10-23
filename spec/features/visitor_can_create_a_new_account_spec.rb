@@ -14,7 +14,6 @@ describe "a visitor can create a new account" do
 
     expect(current_path).to eq(user_path(User.last))
     expect(page).to have_content("Welcome, #{User.last.name}!")
-    expect(page).to have_link("Logout")
   end
 
   it "a user can log in" do
@@ -24,8 +23,8 @@ describe "a visitor can create a new account" do
 
     expect(current_path).to eq(login_path)
 
-    fill_in "session[name]", with: "User 1"
-    fill_in "session[password]", with: "xyz1"
+    fill_in "session[name]", with: "#{user.name}"
+    fill_in "session[password]", with: "#{user.password}"
     click_on "Log In"
 
     expect(current_path).to eq(user_path(user))
@@ -33,7 +32,17 @@ describe "a visitor can create a new account" do
   end
 
   it "a user can log out of account" do
-    user = User.create(name: "")
+    user = create(:user)
+    visit login_path
+    fill_in "session[name]", with: "User 1"
+    fill_in "session[password]", with: "xyz1"
+    click_on "Log In"
 
+    expect(current_path).to eq(user_path(user))
+    expect(page).to have_link("Logout")
+
+    click_on "Logout"
+
+    expect(current_path).to eq(root_path)
   end
 end
