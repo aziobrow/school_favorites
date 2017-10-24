@@ -5,5 +5,9 @@ Rails.application.routes.draw do
   get '/login', to: "sessions#new"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :users, only: [:new, :create, :show]
-  resources :districts, only: [:index]
+  
+  resources :schools, only: [:index]
+
+  resources :districts, only: [:index, :show] do
+  end
 end

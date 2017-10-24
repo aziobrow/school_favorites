@@ -34,8 +34,8 @@ describe "a visitor can create a new account" do
   it "a user can log out of account" do
     user = create(:user)
     visit login_path
-    fill_in "session[name]", with: "User 1"
-    fill_in "session[password]", with: "xyz1"
+    fill_in "session[name]", with: "#{user.name}"
+    fill_in "session[password]", with: "#{user.password}"
     click_on "Log In"
 
     expect(current_path).to eq(user_path(user))
