@@ -1,0 +1,7 @@
+<h1>All Schools for <%= @district.name %></h1>
+School Board Member: <%= @district.board_member %>
+
+<% @district.schools.each do |school| %>
+  <%= school.name %>
+  <%= school.grade_levels %>
+<% end %>

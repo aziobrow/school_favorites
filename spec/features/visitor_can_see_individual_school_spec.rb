@@ -5,7 +5,7 @@ describe "a visitor can see an individual school" do
     school = create(:school)
     visit school_path(school)
 
-    expect(current_path).to eq("/school/#{school.id}")
+    expect(current_path).to eq("/schools/#{school.id}")
     expect(page).to have_content("#{school.name}")
     expect(page).to have_content("#{school.school_number}")
     expect(page).to have_content("#{school.address}")

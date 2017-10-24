@@ -38,5 +38,5 @@ schools.each do |school|
                 grade_levels: school[:gradelevels],
                 web_url: school[:web_url],
                 description: school[:schooltypedescription],
-                district: District.first)
+                district: District.all.sample)
 end

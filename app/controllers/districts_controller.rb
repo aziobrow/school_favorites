@@ -4,7 +4,6 @@ class DistrictsController < ApplicationController
   end
 
   def show
-    @district = District.find(params[:district_id])
-    redirect_to district_schools_path(@district)
+    @district = District.find(params[:id])
   end
 end
