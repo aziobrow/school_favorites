@@ -1,0 +1,6 @@
+<h1> All Denver Public Schools Districts </h1>
+
+<% @districts.each do |district| %>
+  <li><%= district.name %></li>
+    <%= district.board_member %>
+<% end %>
