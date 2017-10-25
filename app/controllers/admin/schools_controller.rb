@@ -14,6 +14,15 @@ class Admin::SchoolsController < Admin::BaseController
     end
   end
 
+  def edit
+    @school = School.find(params[:id])
+  end
+
+  def update
+    @school = School.update(params[:id], school_params)
+    redirect_to school_path(@school)
+  end
+
   private
 
   def school_params

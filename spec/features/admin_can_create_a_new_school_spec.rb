@@ -30,6 +30,6 @@ describe "an admin can create a new school" do
     expect(page).to have_content("K-5")
     expect(page).to have_content("wwww.southmoor.com")
     expect(page).to have_content("Elementary")
-    expect(page).to have_content("District 1")
+    expect(page).to have_content("#{district.name}")
   end
 end
