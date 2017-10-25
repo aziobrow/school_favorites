@@ -1,0 +1,8 @@
+<h1>Edit <%= @district.name %>:</h1>
+
+<%= form_for [:admin, @district] do |f| %>
+  <%= f.label :board_member %>
+  <%= f.text_field :board_member %>
+
+  <%= f.submit %>
+<% end %>

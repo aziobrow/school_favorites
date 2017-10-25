@@ -14,5 +14,6 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :schools, only: [:new, :create, :edit, :update, :destroy]
+    resources :districts, only: [:edit, :update]
   end
 end
