@@ -3,4 +3,10 @@
 <% @schools.each do |school|  %>
   <%= school.name %>
   <%= school.description %>
+
+  <% if current_user.admin? %>
+    <div><%= link_to "Edit", edit_admin_school_path(school) %></div>
+    <div><%= link_to "Delete", admin_school_path(school), method: "delete" %></div>
+  <% end %>
+
 <% end %>

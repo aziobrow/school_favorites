@@ -9,6 +9,16 @@
   </head>
 
   <body>
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, class: name %>
+    <% end %>
+
+    <nav>
+      <%= link_to "All Schools", schools_path %>
+      <%= link_to "All Districts", districts_path %>
+      <%= link_to "Log Out", logout_path, method: "delete" %>
+    </nav>
+    
     <%= yield %>
   </body>
 </html>
