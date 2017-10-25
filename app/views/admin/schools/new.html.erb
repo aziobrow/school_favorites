@@ -1,0 +1,35 @@
+<h1>Create New DPS School</h1>
+
+<%= form_for @school, url: {action: "create"} do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :school_number %>
+  <%= f.text_field :school_number %>
+
+  <%= f.label :address %>
+  <%= f.text_field :address %>
+
+  <%= f.label :zip_code %>
+  <%= f.text_field :zip_code %>
+
+  <%= f.label :phone %>
+  <%= f.text_field :phone %>
+
+  <%= f.label :principal %>
+  <%= f.text_field :principal %>
+
+  <%= f.label :grade_levels %>
+  <%= f.text_field :grade_levels %>
+
+  <%= f.label :web_url %>
+  <%= f.text_field :web_url %>
+
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+
+  <%= f.label :district %>
+  <%= f.collection_select :district_id, District.order(:name), :id, :name, include_blank: false %>
+
+  <%= f.submit %>
+<% end %>

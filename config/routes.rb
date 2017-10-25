@@ -10,4 +10,8 @@ Rails.application.routes.draw do
   resources :schools, only: [:index, :show]
 
   resources :districts, only: [:index, :show]
+
+  namespace :admin do
+    resources :schools, only: [:new, :create]
+  end
 end
