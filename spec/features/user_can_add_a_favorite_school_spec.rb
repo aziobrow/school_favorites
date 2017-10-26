@@ -11,5 +11,15 @@ describe "when a user favorites an existing school" do
 
     expect(page).to have_content("#{school.name} added to favorites")
   end
-  #add something to check user path page for all favorited schools
+
+  it "user can delete a school from favorites list" do
+    school = create(:school)
+    user = create(:user)
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+    visit school_path(school)
+    click_link "Add Favorite"
+    click_link "Unfavorite"
+
+    expect(page).to have_content("#{school.name} removed from favorites")
+  end
 end

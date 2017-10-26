@@ -12,6 +12,12 @@ class FavoriteSchoolsController < ApplicationController
     end
   end
 
+  def destroy
+    @favorite_school = FavoriteSchool.find_by(school: @school).destroy
+    flash[:success] = "#{@favorite_school.school.name} removed from favorites"
+    redirect_to school_path(@school)
+  end
+
   private
 
   def set_school

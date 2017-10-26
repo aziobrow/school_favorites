@@ -70,5 +70,15 @@ RSpec.describe School, type: :model do
       school = create(:school)
       expect(school).to respond_to(:district)
     end
+
+    it "has many favorite schools" do
+      school = create(:school)
+      expect(school).to respond_to(:favorite_schools)
+    end
+
+    it "has many users" do
+      school = create(:school)
+      expect(school).to respond_to(:users)
+    end
   end
 end

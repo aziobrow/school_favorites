@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :favorite_school do
-    user nil
-    school nil
+    user
+    school 
   end
 end

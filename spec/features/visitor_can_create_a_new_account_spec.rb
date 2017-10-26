@@ -39,9 +39,8 @@ describe "a visitor can create a new account" do
     click_on "Sign In"
 
     expect(current_path).to eq(user_path(user))
-    expect(page).to have_link("Logout")
 
-    click_on "Logout"
+    click_link "Log Out"
 
     expect(current_path).to eq(root_path)
   end

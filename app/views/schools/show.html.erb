@@ -12,4 +12,8 @@ District: <%= @school.district.name %>
 
 Website: <%= @school.web_url %>
 
-<%= link_to "Add Favorite", school_favorite_schools_path(@school), controller: "favorite_schools_controller", method: "post" %>
+<% if current_user && current_user.favorite_schools.exists?(school: @school) %>
+  <%= link_to "Unfavorite", school_favorite_school_path(@school), controller: "favorite_schools_controller", method: "delete" %>
+<% else %>
+  <%= link_to "Add Favorite", school_favorite_schools_path(@school), controller: "favorite_schools_controller", method: "post" %>
+<% end %>
