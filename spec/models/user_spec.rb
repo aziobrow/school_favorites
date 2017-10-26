@@ -31,6 +31,17 @@ RSpec.describe User, type: :model do
         expect(user).to be_valid
       end
     end
+  end
 
+  describe "relationships" do
+    it "has many favorite schools" do
+      user = create(:user)
+      expect(user).to respond_to(:favorite_schools)
+    end
+
+    it "has many schools" do
+      user = create(:user)
+      expect(user).to respond_to(:schools)
+    end
   end
 end
