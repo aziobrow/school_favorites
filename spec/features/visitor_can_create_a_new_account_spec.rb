@@ -25,7 +25,7 @@ describe "a visitor can create a new account" do
 
     fill_in "session[name]", with: "#{user.name}"
     fill_in "session[password]", with: "#{user.password}"
-    click_on "Log In"
+    click_on "Sign In"
 
     expect(current_path).to eq(user_path(user))
     expect(page).to have_content("Welcome, #{user.name}!")
@@ -36,7 +36,7 @@ describe "a visitor can create a new account" do
     visit login_path
     fill_in "session[name]", with: "#{user.name}"
     fill_in "session[password]", with: "#{user.password}"
-    click_on "Log In"
+    click_on "Sign In"
 
     expect(current_path).to eq(user_path(user))
     expect(page).to have_link("Logout")

@@ -11,3 +11,5 @@ School Number: <%= @school.school_number %>
 District: <%= @school.district.name %>
 
 Website: <%= @school.web_url %>
+
+<%= link_to "Add Favorite", school_favorite_schools_path(@school), controller: "favorite_schools_controller", method: "post" %>

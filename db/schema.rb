@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171024213043) do
+ActiveRecord::Schema.define(version: 20171026002135) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,15 @@ ActiveRecord::Schema.define(version: 20171024213043) do
     t.string "board_member"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "favorite_schools", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "school_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["school_id"], name: "index_favorite_schools_on_school_id"
+    t.index ["user_id"], name: "index_favorite_schools_on_user_id"
   end
 
   create_table "schools", force: :cascade do |t|
@@ -47,5 +56,7 @@ ActiveRecord::Schema.define(version: 20171024213043) do
     t.integer "role", default: 0
   end
 
+  add_foreign_key "favorite_schools", "schools"
+  add_foreign_key "favorite_schools", "users"
   add_foreign_key "schools", "districts"
 end
