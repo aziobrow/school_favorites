@@ -1,6 +1,7 @@
 <h1> All Denver Public Schools Districts </h1>
 
-<% @districts.each do |district| %>
-  <li><%= district.name %></li>
-    <%= district.board_member %>
-<% end %>
+<ul>
+  <% @districts.each do |district| %>
+    <h3><li><%= link_to district.name, district_path(district) %> (<%= district.board_member %>)</li></h3>
+  <% end %>
+</ul>

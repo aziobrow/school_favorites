@@ -1,13 +1,12 @@
 <h1> All Schools</h1>
 
 <div class="school_info"><% @schools.each do |school|  %>
-  <%= school.name %>
-  <%= school.description %>
+  <%= link_to school.name, school_path(school) %> (<%= school.description %>)
 
   <% if current_user && current_user.admin? %>
-    <div><%= link_to "Edit", edit_admin_school_path(school) %></div>
-    <div><%= link_to "Delete", admin_school_path(school), method: "delete" %></div>
-  <% end %>
+    <%= link_to "Edit", edit_admin_school_path(school) %>
+    <%= link_to "Delete", admin_school_path(school), method: "delete" %>
+  <% end %><hr>
 
 <% end %>
 </div>

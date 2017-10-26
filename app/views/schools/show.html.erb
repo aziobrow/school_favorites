@@ -1,21 +1,31 @@
-<h1><%= @school.name %></h1>
-Principal <%= @school.principal %>
-<%= @school.description %>
-<%= @school.grade_levels %><br>
+<h1><%= @school.name %> (<%= @school.phone %>) </h1>
 
-<%= @school.address %>
-<%= @school.zip_code %>
-<%= @school.phone %><br>
+<table>
+  <th> Principal </th>
+  <th> Description </th>
+  <th> Grade Levels </th>
+  <th> Address </th>
+  <th> School Number </th>
+  <th> District </th>
+    <tr>
+      <td><%= @school.principal %></td>
+      <td><%= @school.description %></td>
+      <td><%= @school.grade_levels %></td>
+      <td><%= @school.address %><br>
+          <%=@school.zip_code %></td>
+      <td><%= @school.school_number %></td>
+      <td><%= @school.district.name %></td>
+    </tr>
+</table><br>
 
-School Number: <%= @school.school_number %>
-District: <%= @school.district.name %>
 
-Website: <%= @school.web_url %>
+<h3>Website: <%= @school.web_url %></h3>
 
-<% if current_user %>
+<p><% if current_user %>
   <% if current_user.favorite_schools.exists?(school: @school) %>
     <%= link_to "Unfavorite", school_favorite_school_path(@school), controller: "favorite_schools_controller", method: "delete" %>
   <% else %>
     <%= link_to "Add Favorite", school_favorite_schools_path(@school), controller: "favorite_schools_controller", method: "post" %>
   <% end %>
 <% end %>
+</p>

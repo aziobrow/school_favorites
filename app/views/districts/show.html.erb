@@ -1,7 +1,7 @@
 <h1>All Schools for <%= @district.name %></h1>
-School Board Member: <%= @district.board_member %>
+<h3>School Board Member: <%= @district.board_member %></h3>
 
 <% @district.schools.each do |school| %>
-  <%= school.name %>
-  <%= school.grade_levels %>
+  <%= link_to school.name, school_path(school) %> (<%= school.grade_levels %>)
+  <hr>
 <% end %>

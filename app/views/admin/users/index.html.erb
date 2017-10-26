@@ -1,14 +1,24 @@
 <h1> All Users </h1>
 
 <div class="user_list">
-  <% @default_users.each do |default_user| %>
-    <%= default_user.name %>
-    <%= link_to "Delete", admin_user_path(default_user), method: "delete" %>
-  <% end %>
-</div>
+  <table>
+    <th>Default Users</th>
+      <% @default_users.each do |default_user| %>
+        <tr>
+          <td><%= default_user.name %></td>
+          <td><%= link_to "Delete", admin_user_path(default_user), method: "delete" %></td>
+        </tr>
+      <% end %>
+  </table>
+</div><br>
 
 <div>
-  <% @admin_users.each do |admin_user| %>
-    <%= admin_user.name %>
-  <% end %>
+  <table>
+    <th> Administrators </th>
+      <% @admin_users.each do |admin_user| %>
+        <tr>
+          <td><%= admin_user.name %></td>
+        </tr>
+      <% end %>
+  </table>
 </div>

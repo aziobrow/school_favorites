@@ -3,5 +3,7 @@
 <h3>Your Favorite Schools:</h3>
 
 <% @user.favorite_schools.each do |favorite_school| %>
-  <%= favorite_school.school.name %>
+  <ul>
+    <li><%= link_to favorite_school.school.name, school_path(favorite_school.school) %></li>
+  </ul>
 <% end %>
