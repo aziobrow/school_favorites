@@ -1,0 +1,14 @@
+<h1> All Users </h1>
+
+<div class="user_list">
+  <% @default_users.each do |default_user| %>
+    <%= default_user.name %>
+    <%= link_to "Delete", admin_user_path(default_user), method: "delete" %>
+  <% end %>
+</div>
+
+<div>
+  <% @admin_users.each do |admin_user| %>
+    <%= admin_user.name %>
+  <% end %>
+</div>

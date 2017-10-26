@@ -24,8 +24,7 @@ class Admin::SchoolsController < Admin::BaseController
   end
 
   def destroy
-    school = School.find(params[:id])
-    school.destroy
+    school = School.find(params[:id]).destroy
 
     flash[:success] = "You have successfully deleted #{school.name}"
     redirect_to schools_path
