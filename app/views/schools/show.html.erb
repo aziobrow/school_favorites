@@ -24,6 +24,9 @@
 <p><% if current_user %>
   <% if current_user.favorite_schools.exists?(school: @school) %>
     <%= link_to "Unfavorite", school_favorite_school_path(@school), controller: "favorite_schools_controller", method: "delete" %>
+    <h3> Notes (<%= @favorite_school.notes.count %>) </h3><hr>
+    <%= render partial: 'favorite_schools/note', collection: @favorite_school.notes.reverse %>
+    <%= render partial: 'notes/form' %>
   <% else %>
     <%= link_to "Add Favorite", school_favorite_schools_path(@school), controller: "favorite_schools_controller", method: "post" %>
   <% end %>

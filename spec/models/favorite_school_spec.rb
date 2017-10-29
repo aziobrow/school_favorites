@@ -11,6 +11,11 @@ RSpec.describe FavoriteSchool, type: :model do
       favorite_school = create(:favorite_school)
       expect(favorite_school).to respond_to(:school)
     end
-    
+
+    it "has many notes" do
+      favorite_school = create(:favorite_school)
+      expect(favorite_school).to respond_to(:notes)
+    end
+
   end
 end

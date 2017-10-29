@@ -1,0 +1,8 @@
+<h1> Add a Note </h1>
+
+<%= form_for [@favorite_school, @note] do |f| %>
+  <%= f.label :content, "Your Note" %>
+  <%= f.text_area :content %>
+
+  <%= f.submit "Add Note" %>
+<% end %>

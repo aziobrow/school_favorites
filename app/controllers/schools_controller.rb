@@ -4,6 +4,12 @@ class SchoolsController < ApplicationController
   end
 
   def show
-    @school = School.find(params[:id])
+    if FavoriteSchool.find_by(school_id: params[:id])
+      @favorite_school = FavoriteSchool.find_by(school_id: params[:id])
+      @school = School.find(params[:id])
+      @note = Note.new
+    else
+      @school = School.find(params[:id])
+    end
   end
 end

@@ -15,6 +15,10 @@ Rails.application.routes.draw do
 
   resources :districts, only: [:index, :show]
 
+  resources :favorite_schools, only: [] do
+    resources :notes, only: [:create]
+  end
+
   namespace :admin do
     resources :schools, only: [:new, :create, :edit, :update, :destroy]
     resources :districts, only: [:edit, :update]
