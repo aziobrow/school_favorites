@@ -19,7 +19,7 @@ describe "a visitor can create a new account" do
   it "a user can log in" do
     user = create(:user)
     visit "/"
-    click_on "Log In"
+    click_on "Log In To Existing Account"
 
     expect(current_path).to eq(login_path)
 
