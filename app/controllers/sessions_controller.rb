@@ -4,8 +4,7 @@ class SessionsController < ApplicationController
 
   def create
     if request.env['omniauth.auth']
-      user_email = request.env['omniauth.auth'][:info][:email]
-      user = User.find_by(email: user_email)
+      user = User.omniauth(request.env['omniauth.auth'])
       session[:user_id] = user.id
       redirect_to user_path(user)
     elsif params[:session]
@@ -26,6 +25,3 @@ class SessionsController < ApplicationController
   end
 
 end
-
-#if user email
-# if user find by does not return a user, you need to create or update

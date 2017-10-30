@@ -7,4 +7,9 @@ class User < ApplicationRecord
 
   enum role: ["default", "admin"]
 
+  def self.omniauth(auth_hash)
+    user = User.find_by(email: auth_hash[:info][:email])
+    user
+  end
+
 end

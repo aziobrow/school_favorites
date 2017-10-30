@@ -1,9 +1,13 @@
-<%= "Welcome, #{@user.name}!" %>
+<div class='greeting' style="text-align:center;"><%= "Welcome, #{@user.name}!" %></div>
 
 <h3>Your Favorite Schools:</h3>
 
-<% @user.favorite_schools.each do |favorite_school| %>
-  <ul>
-    <li><%= link_to favorite_school.school.name, school_path(favorite_school.school) %></li>
-  </ul>
+<% if @user.favorite_schools.empty? %>
+  <div style="text-align:center;">No favorites yet. Get started!</div>
+<% else %>
+  <% @user.favorite_schools.each do |favorite_school| %>
+    <ul class='school-info'>
+      <li><%= link_to favorite_school.school.name, school_path(favorite_school.school) %></li>
+    </ul>
+  <% end %>
 <% end %>

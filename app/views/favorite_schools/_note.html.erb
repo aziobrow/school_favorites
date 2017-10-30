@@ -1,2 +1,4 @@
-<p><%= note.content %><br>
-<%= note.created_at.strftime("Note added on %m/%d/%Y, %I:%M%P") %></p>
+<p class= 'note-content'><%= note.content %><br></p>
+<p class= 'note-time'>
+  <%= note.created_at.strftime("Note added on %m/%d/%Y, %I:%M%P") %>
+</p>

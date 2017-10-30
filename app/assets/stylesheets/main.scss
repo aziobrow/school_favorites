@@ -1,0 +1,198 @@
+$roboto: 'Roboto Condensed', sans-serif;
+$roboto_slab: 'Roboto Slab', serif;
+$blue_charcoal: #376996;
+$eden: #124559;
+$smalt_blue: #598392;
+$spring_rain: #AEC3B0;
+$frost: #EFF6E0;
+
+ul.nav-bar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: $eden;
+}
+
+li.nav-bar-item {
+  float: left;
+}
+
+li.nav-bar-item-log {
+  padding: 14px 16px;
+  padding-right: 20px;
+  font-family: $roboto;
+}
+
+li.nav-bar-item-log a {
+  color: $spring_rain;
+}
+
+li.nav-bar-item a {
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-family: $roboto;
+  color: $spring_rain;
+}
+
+.flash  {
+  background-color: $spring_rain;
+  border-color: #D6E9C6;
+  width: auto;
+  color: $blue_charcoal;
+  margin-top: 60px;
+  margin-left: 16px;
+  margin-right: 16px;
+  font-family: $roboto;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+body  {
+  background-color: $frost;
+}
+
+h1  {
+  padding: 20px 16px;
+  font-family: $roboto_slab
+}
+
+h3  {
+  padding-left: 16px;
+  margin-bottom: 42px;
+  font-family: $roboto_slab
+}
+
+a   {
+  text-decoration: none;
+}
+table, th, td {
+   border: 1px solid black;
+}
+
+th, td {
+    padding: 4px;
+    text-align: center;
+}
+
+table {
+    width: 95%;
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+th {
+    height: 40px;
+    margin-left: 16px;
+    margin-right: 16px;
+    font-family: $roboto_slab
+}
+
+td  {
+  font-family: $roboto
+}
+
+.sign-up {
+  padding: 50px 16px;
+  font-size: 40px;
+  font-family: $roboto_slab;
+}
+
+.new-user-form  {
+  padding: 50px 16px;
+}
+
+.greeting  {
+  padding: 50px 0px 0px 16px;
+  font-family: $roboto_slab;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.login  {
+  padding: 50px 16px 15px 16px;
+}
+
+.google {
+  padding-left: 16px;
+}
+
+.button  {
+  font-family: $roboto;
+  font-weight: bold;
+  background-color: $spring_rain;
+  border-radius: 25px;
+  padding: 2px 6px 2px 6px;
+  margin-left: 16px;
+  color: $eden;
+  font-size: 16px;
+
+}
+
+.link-as-button {
+  font-family: $roboto;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: $spring_rain;
+  padding: 2px 6px 2px 6px;
+  margin-left: 16px;
+  margin-top: 16px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+  border-radius: 25px;
+  display: inline;
+}
+
+.note-header  {
+  margin-top: 50px;
+}
+
+.note-content {
+  font-family: $roboto;
+  padding-left: 16px;
+}
+
+.note-time  {
+  font-family: $roboto;
+  padding-left: 24px;
+  font-size: 12px;
+}
+
+.form-label {
+  padding-left: 16px;
+  font-family: $roboto_slab;
+  margin-bottom: 16px;
+  color: $blue_charcoal;
+}
+
+.form-box {
+  padding-left: 16px;
+}
+
+input[type=text] {
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+.school-info  {
+  padding-left: 16px;
+  margin-bottom: 20px;
+  font-family: $roboto
+}
+
+li  {
+  padding-left: 16px;
+  list-style-position: inside;
+}
+
+a {color: $eden;}
+a:visited {color: $eden;}
+a:hover {color: $smalt_blue;}
+a:active {color: $smalt_blue;}
